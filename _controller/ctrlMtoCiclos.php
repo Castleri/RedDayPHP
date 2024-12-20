@@ -11,7 +11,7 @@ class ctrlMtoCiclos {
             $fecha_inicio = $_POST["fecha_inicio"];
             $fecha_fin = $_POST["fecha_fin"];
             $model->insertCiclo($fecha_inicio, $fecha_fin);
-            header("Location: /ciclos/");
+            header("Location: /");
         }
         include $this->recurso;
     }
