@@ -3,7 +3,7 @@ class MainModel {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO("CicloMenstrual", "root", "AAlleexxyyaaeell22770022");
+        $this->db = new PDO('mysql:host=localhost' .';dbname=ciclomenstrual' . ';charset=utf8', "root", "pass");
     }
 
     public function getDataRows($tabla, $columnas) {
