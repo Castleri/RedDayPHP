@@ -3,6 +3,7 @@ require_once "_model/MainModel.php";
 
 class ctrlMtoCiclos {
     private $recurso = "_view/formulario_ciclo.html";
+    private $JS = "js/ctrlmtoproducto.js";
 
     public function renderContent() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,4 +15,7 @@ class ctrlMtoCiclos {
         }
         include $this->recurso;
     }
+    public function renderJS() {
+		include self::JS;
+	}
 }

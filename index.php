@@ -12,7 +12,6 @@ $peticion = explode("/", $querystring);
 $controlador = count($peticion) > 0 ? $peticion[0] : "";
 $accion = count($peticion) > 1 ? $peticion[1] : "";
 $id = count($peticion) > 2 ? $peticion[2] : "";
-
 switch ($controlador) {
     case "ciclos":
         if ($accion == "" || is_null($accion)) {

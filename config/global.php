@@ -1,5 +1,5 @@
 <?php
-    set_include_path(
+    set_include_path(   
         get_include_path() .
         PATH_SEPARATOR . realpath(__DIR__ . '/..') . '/_model' .
         PATH_SEPARATOR . realpath(__DIR__ . '/..') . '/_controller' .
@@ -11,4 +11,4 @@
     define("DB_HOST", "localhost");
     define("DB_BASE", "ciclomenstrual");
     define("DB_USR", "root");
-    define("DB_PASS", "pass");
+    define("DB_PASS", "Erick09._"); 

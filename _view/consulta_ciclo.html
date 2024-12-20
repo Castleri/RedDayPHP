@@ -1,0 +1,26 @@
+﻿<h1>Consultar Ciclo</h1>
+
+<?php if ($this->ciclo): ?>
+<table class="table table-bordered" id="tblConsulta">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <td><?php echo htmlspecialchars($this->ciclo['id']); ?></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Fecha Inicio</th>
+            <td><?php echo htmlspecialchars($this->ciclo['fecha_inicio']); ?></td>
+        </tr>
+        <tr>
+            <th>Fecha Fin</th>
+            <td><?php echo htmlspecialchars($this->ciclo['fecha_fin']); ?></td>
+        </tr>
+    </tbody>
+</table>
+<a href="/">Volver a la lista</a>
+<?php else: ?>
+<p>No se encontró el ciclo solicitado.</p>
+<a href="/">Volver a la lista</a>
+<?php endif; ?>
