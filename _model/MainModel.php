@@ -3,7 +3,7 @@ class MainModel {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost' .';dbname=ciclomenstrual' . ';charset=utf8', "root", "pass");
+        $this->db = new PDO('mysql:host='. DB_HOST .';dbname='. DB_BASE . ';charset=utf8', DB_USR, DB_PASS);
     }
 
     public function getDataRows($tabla, $columnas) {
@@ -14,8 +14,10 @@ class MainModel {
     }
 
     public function insertCiclo($fecha_inicio, $fecha_fin) {
-        $stmt = $this->db->prepare("INSERT INTO ciclos (fecha_inicio, fecha_fin) VALUES (?, ?)");
-        return $stmt->execute([$fecha_inicio, $fecha_fin]);
+        $stmt = $this->db->prepare("INSERT INTO ciclos (fecha_inicio, fecha_fin, Duracion) VALUES (?, ?, ?)");
+        $duracion = (strtotime($fecha_fin) - strtotime($fecha_inicio)) / 86400; 
+        echo $duracion;
+        return $stmt->execute([$fecha_inicio, $fecha_fin, $duracion]);
     }
 
     public function getCicloById($id) {
