@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="<?php echo SITE_URL; ?>utils/boostrap5/bootstrap.min.css" rel="stylesheet">
+    <!--  datatables  -->
+    <link href="<?php echo SITE_URL; ?>utils/datatables_v2.0.8/datatables.min.css" rel="stylesheet">
+    <!-- sweetalert CSS -->
+    <link href="<?php echo SITE_URL; ?>utils/sweetalert2_v11.11/sweetalert2.min.css" rel="stylesheet">
+    <script>
+        function confirmacion(){
+            Swal.fire({
+  title: "estas seguro",
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: "si",
+  denyButtonText: `no`
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    Swal.fire("Saved!", "", "success");
+  } else if (result.isDenied) {
+    Swal.fire("Changes are not saved", "", "info");
+  }
+});
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar superior -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                ☰
+            </button>
+            <a class="navbar-brand ms-3" href="#">Empresa</a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <div class="d-flex align-items-center ms-3">
+                <i class="bi bi-gear" style="font-size: 1.5rem; cursor: pointer;"></i>
+                <i class="bi bi-person ms-3" style="font-size: 1.5rem; cursor: pointer;"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Apps</a></li>
+                <li class="list-group-item"><a href="#">Games</a></li>
+                <li class="list-group-item"><a href="#">Movies</a></li>
+                <li class="list-group-item"><a href="#">Books</a></li>
+                <li class="list-group-item"><a href="#">Newspapers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="container mt-4">
+        <!-- aqui va el contenido del proyecto que esta enlazado a un modelo dineamico de donde saldra el contenido-->
+        <?php $ctrl->renderContent(); ?>
+    </main>
+    <!-- jquery JS -->
+    <script src="<?php echo SITE_URL; ?>utils/jquery/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="<?php echo SITE_URL; ?>utils/boostrap5/boostrap.bundle.min.js.js"></script>
+    <!-- datatables JS -->
+    <script src="<?php echo SITE_URL; ?>utils/datatables_v2.0.8/datatables.min.js"></script>
+    <!-- sweetalert JS -->
+    <script src="<?php echo SITE_URL; ?>utils/sweetalert2_v11.11/sweetalert2.min.js"></script>
+
+    <script>
+        let table= new DataTable('#tblDatos')
+    </script>
+    <script>
+        
+        <?php $ctrl->renderJS(); ?>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!--aqui se pego el contenido de lo que se esta sacando de master-->
+<h1>Contenido</h1>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
+</p>
+<p>
+    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+</p>
+<p>
+    Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Vivamus varius pretium ligula, a aliquam odio euismod sit amet.
+</p><!--
+<table id="tblDatos" class="table table-striped">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Accciones</th>
+    </tr>
+</thead>
+<tbody>
+    <?php foreach($this->datos as $registro): ?>
+    <tr>
+        <td><?php echo $registro["id"] ?></td>
+        <td><?php echo $registro["nombre"] ?></td>
+        <td><?php echo $registro["precio"] ?></td>
+        <td><a href="javascript:confirmacion()">editar</a>
+            <a href="javascript:confirmacion()">eliminar</a></td>
+    </tr>
+    <?php endforeach ?>
+</tbody>
+</table>
+--><table id="tblDatos" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->datos as $producto): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($producto["id"]); ?></td>
+                <td><?php echo htmlspecialchars($producto["nombre"]); ?></td>
+                <td><?php echo htmlspecialchars($producto["precio"]); ?></td>
+                    <!-- Botón para editar -->
+                    
+                <td><a href="javascript:confirmacion()">editar</a>
+                <a href="javascript:confirmacion()">eliminar</a></td>
+    </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>

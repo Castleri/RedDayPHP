@@ -1,0 +1,36 @@
+REGLAS PARA IIS Y APACHE PARA PROCESAR LAS URL PARA EL ESTILO FRONT CONTROLLER (USER FRIENDLY URLS)
+---------------------------------------------------------------------------------------------------
+
+----------
+| APACHE |
+----------
+#Tener Apache HTTPD instalado
+	sudo apt install apache2
+
+#Habilitar el modulo de redefinición de reglas
+	sudo a2enmod rewrite
+
+#Editar el archivo de configuración de Apache (depende de tu SO) y modificar/agregar la siguiente sección
+	
+	<Directory /var/www/html>
+    		AllowOverride All
+	</Directory>
+
+#Reiniciar Apache
+	sudo systemctl restart apache2
+
+#Copiar el archivo .htaccess a la carpeta raíz del proyecto
+
+-------
+| IIS |
+-------
+
+#Tener habilitado IIS
+	Control -> Programas y Características -> Activar/Desactivar características de Windows -> Internet Information Services (IIS)
+
+#Descargar e instalar el módulo de redefinición de reglas (IIS URL Rewrite Module) para tu versión de IIS/SO desde la página de Microsoft
+	https://www.iis.net/downloads/microsoft/url-rewrite
+
+#Reiniciar IIS
+
+#Copiar el archivo web.config a la carpeta raíz del proyecto
