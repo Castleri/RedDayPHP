@@ -17,6 +17,15 @@
             <th>Fecha Fin</th>
             <td><?php echo htmlspecialchars($this->ciclo['fecha_fin']); ?></td>
         </tr>
+        <tr>
+            <th>Duración del ciclo</th>
+            <td>
+                <?php echo htmlspecialchars($this->ciclo['duracion']); ?> 
+                <?php if ($this->ciclo['duracion'] == 1): ?> día
+                <?php else: ?> días
+                <?php endif; ?>
+            </td>
+        </tr>
     </tbody>
 </table>
 <a href="/">Volver a la lista</a>

@@ -1,4 +1,4 @@
-<h1>Ciclos Registrados</h1>
+﻿<h1>Ciclos Registrados</h1>
 <table class="table table-striped" id="tblDatos">
     <thead>
         <tr>
@@ -23,5 +23,23 @@
 </table>
 
 <div style="text-align:center">
+    <?php
+        $sumaDuracion = 0;
+        $cuenta = count($this->datos);
+        foreach ($this->datos as $valor)
+        {
+            $sumaDuracion = $sumaDuracion + $valor["duracion"];
+        }
+        $ultimoCiclo = strtotime($this->datos[$cuenta - 1]["fecha_fin"]) / 86400;
+        $tiempo = ($sumaDuracion / $cuenta);
+        $sig = $tiempo + $ultimoCiclo;
+        $sig *= 86400;
+        $date = date("Y-m-d", $sig);
+    ?>
+    <p><h3>Fecha de Próxima menstruación estimada</h3></p>
+    <p><h2><?php echo $date . " (En " . $tiempo . " días)"?></h2></p>
+    <font color="#0F0F0F"><p style="text-indent: 30px;">
+        <?php if ($cuenta < 10): ?> Continúe agregando más ciclos para una predicción más certera <?php endif; ?>
+    </p></font>
     <p style="text-indent:40px"><h5><a href="/ciclos/agregar">Agregar ciclo</a> </h5> </p>
 </div>

@@ -8,7 +8,7 @@ class ctrlListaCiclos {
 
     public function __construct() {
         $model = new MainModel();
-        $this->datos = $model->getDataRows("ciclos", ["id", "fecha_inicio", "fecha_fin"]);
+        $this->datos = $model->getDataRows("ciclos", ["id", "fecha_inicio", "fecha_fin", "duracion"]);
     }
 
     public function renderContent() {

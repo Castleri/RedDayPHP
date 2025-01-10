@@ -33,19 +33,28 @@
             });
         }
     </script>
+    <style>
+        #topbar {
+            background-color: #B10909;
+            border-color: #0F0F0F;
+        }
+        body {
+            background-color: #FAEFE5;
+        }
+        #btnSide {
+            background-color: #4F646F;
+            border-color: #0F0F0F;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar superior -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom" id="topbar">
         <div class="container-fluid">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" id="btnSide">
                 ☰
             </button>
-            <a class="navbar-brand ms-3" href="#">Empresa</a>
-            <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <a class="navbar-brand ms-3" href="#"><font color="#FAEFE5">Red Day</font></a>
             <div class="d-flex align-items-center ms-3">
                 <i class="bi bi-gear" style="font-size: 1.5rem; cursor: pointer;"></i>
                 <i class="bi bi-person ms-3" style="font-size: 1.5rem; cursor: pointer;"></i>
@@ -61,11 +70,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">Apps</a></li>
-                <li class="list-group-item"><a href="#">Games</a></li>
-                <li class="list-group-item"><a href="#">Movies</a></li>
-                <li class="list-group-item"><a href="#">Books</a></li>
-                <li class="list-group-item"><a href="#">Newspapers</a></li>
+                <li class="list-group-item"><a href="/ciclos/agregar">Agregar Ciclos</a></li>
             </ul>
         </div>
     </div>

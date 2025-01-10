@@ -16,7 +16,6 @@ class MainModel {
     public function insertCiclo($fecha_inicio, $fecha_fin) {
         $stmt = $this->db->prepare("INSERT INTO ciclos (fecha_inicio, fecha_fin, Duracion) VALUES (?, ?, ?)");
         $duracion = (strtotime($fecha_fin) - strtotime($fecha_inicio)) / 86400; 
-        echo $duracion;
         return $stmt->execute([$fecha_inicio, $fecha_fin, $duracion]);
     }
 
